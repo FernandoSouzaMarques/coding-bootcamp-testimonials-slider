@@ -53,7 +53,19 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%; }
+  height: 100%;
+  position: relative; }
+  .carousel_content::before {
+    content: '';
+    display: block;
+    position:absolute;
+    background-image: url('../images/pattern-curve.svg');
+    background-repeat: no-repeat;
+    bottom: 0;
+    left: 0;
+    width: 37.5em;
+    height: 9.625em;
+  }
 
 .carousel_info {
   z-index: 1; }
@@ -62,6 +74,8 @@ body {
   font-size: 2em;
   font-weight: 300;
   color: #202046;
+  line-height: 1.375em;
+  margin-top: 1.4375em;
   position: relative; }
   .carousel_text::before {
     content: '';
@@ -77,7 +91,11 @@ body {
 
 .carousel_people {
   font-weight: 700;
-  color: #202046; }
+  color: #202046;
+  font-size: 1.25em;
+  display: block;
+  line-height: 1.75em;
+  font-weight: 500; }
 
 .carousel_profession {
   color: #babacf; }
@@ -87,6 +105,7 @@ body {
   max-width: 33.75em;
   width: 100%;
   margin-left: -3.4375em;
+  margin-bottom: 2.25em;
   z-index: 0;
   -webkit-box-shadow: 0 5.625em 5.1875em -4.25em #babacf;
   -moz-box-shadow: 0 5.625em 5.1875em -4.25em #babacf;
@@ -158,10 +177,16 @@ body {
   position: absolute;
   bottom: 0;
   transform: translateY(50%);
-  left: 4.375em;
+  left: 3.75em;
   display: flex; }
 
 @media (max-width: 769px) {
+  .mobile-off {
+    display: none;
+    opacity: 0;}
+  .mobile-on {
+    display: block;
+    opacity: 1;}
   .carousel_cnt {
     max-width: 48em; }
   .carousel {
@@ -189,9 +214,14 @@ body {
     transform: translateX(-425px); }
   .carousel_content {
     flex-direction: column-reverse; }
+  .carousel_content::before {
+    background-size: contain;
+    width: 18.75em;
+    height: 4.0625em;
+  }
   .carousel_item {
     max-width: 26.5625em;
-    max-height: 41.75em; }
+    max-height: 100vh }
   .carousel_profile {
     margin-left: 0;
     margin-bottom: 4.375em; }
@@ -207,8 +237,7 @@ body {
   .carousel {
     transform: translateX(-375px); }
   .carousel_item {
-    max-width: 23.4375em;
-    max-height: 41.6875em; }
+    max-width: 23.4375em; }
   .carousel_image::before {
     width: 22.5em;
     height: 22.375em;
