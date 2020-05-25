@@ -27,6 +27,14 @@ body {
   -o-transition-property: -o-transform;
   transition-property: transform; }
 
+.mobile-on {
+  max-height: 0;
+  display: none;
+  mso-hide: all;
+  overflow: hidden;
+  font-size: 0;
+}
+
 .carousel_cnt {
   overflow: hidden;
   max-width: 90em;
@@ -147,7 +155,7 @@ body {
     border-radius: 0 50px 50px 0; }
   .carousel_btn.-prev::before {
     content: "";
-    font-family: 'icomoon' !important;
+    font-family: 'icomoon';
     font-style: normal;
     font-variant: normal;
     font-weight: normal;
@@ -160,7 +168,7 @@ body {
     font-size: 30px; }
   .carousel_btn.-next::before {
     content: "";
-    font-family: 'icomoon' !important;
+    font-family: 'icomoon';
     font-style: normal;
     font-variant: normal;
     font-weight: normal;
@@ -182,11 +190,17 @@ body {
 
 @media (max-width: 769px) {
   .mobile-off {
+    width: 0px;
     display: none;
-    opacity: 0;}
-  .mobile-on {
-    display: block;
-    opacity: 1;}
+    height: 0;
+    font-size: 0;
+    overflow: hidden; }
+    .mobile-on {
+      display: block;
+      max-height: none;
+      font-size: auto;
+      height: auto;
+      overflow: visible;}
   .carousel_cnt {
     max-width: 48em; }
   .carousel {
